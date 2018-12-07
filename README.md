@@ -239,3 +239,12 @@ Display − Displays the complete list.
 Search − Searches an element using the given key.
 
 Delete − Deletes an element using the given key.
+
+
+# Author
+
+Shubham Prakash
+
+(shubham.prakash2308@gmail.com)
+
+LinkedIn: https://www.linkedin.com/in/ishubhamprakash/
