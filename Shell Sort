@@ -1,0 +1,68 @@
+****************************** If all you have is a hammer, everything seems to be a nail. *************************************
+************************************************************Shell Sort**********************************************************
+                                                           ************
+                                                          
+
+Introduction:
+--------------
+Shell sort is a highly efficient sorting algorithm and is based on insertion sort algorithm.
+This algorithm avoids large shifts as in case of insertion sort, if the smaller value is to the far right and has to be moved to the far left.
+This algorithm uses insertion sort on a widely spread elements, first to sort them and then sorts the less widely spaced elements.
+This spacing is termed as interval.
+
+
+
+C Algorithm Implementing Shell Sort:
+---------------------------------
+
+// Shell Sort in C programming
+#include <stdio.h>
+void shellSort(int array[], int n){
+  for (int gap = n/2; gap > 0; gap /= 2){
+    for (int i = gap; i < n; i += 1) {
+      int temp = array[i];
+      int j;
+      for (j = i; j >= gap && array[j - gap] > temp; j -= gap){
+        array[j] = array[j - gap];
+      }
+      array[j] = temp;
+    }
+  }
+}
+void printArray(int array[], int size){
+  for(int i=0; i<size; ++i){
+     printf("%d  ", array[i]);
+  }
+  printf("\n");
+}
+int main(){
+  int size;
+  printf("size :")
+  scanf("%d",&size);
+  int data[size];
+  for(int i=0;i<size;i++)
+  scanf("%d",&data[i]);
+  printf("Before Sorting :")
+  printArray(data, size);
+  shellSort(data, size); 
+  printf("After array: \n"); 
+  printArray(data, size);
+}
+
+
+
+Output:
+--------
+size : 5
+
+Before Sorting:
+3 6 5 2 8
+
+After Sorting:
+2 3 5 6 8
+
+
+
+Time Complexity:
+----------------
+Time complexity of above implementation of shellsort is O(n2).
